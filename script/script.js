@@ -10,9 +10,34 @@ const imagesList = ["01.webp", "02.webp", "03.webp", "04.webp", "05.webp"]
 const iconaUpEl = document.querySelector(".icona-up");
 const iconaDownEl = document.querySelector(".icona-down");
 
+const images = [
+    {
+        image: 'img/01.webp',
+        title: 'Marvel\'s Spiderman Miles Morale',
+        text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+    }, {
+        image: 'img/02.webp',
+        title: 'Ratchet & Clank: Rift Apart',
+        text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+    }, {
+        image: 'img/03.webp',
+        title: 'Fortnite',
+        text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+    }, {
+        image: 'img/04.webp',
+        title: 'Stray',
+        text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+    }, {
+        image: 'img/05.webp',
+        title: "Marvel's Avengers",
+        text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+    }
+];
 
-for (let i = 0; i < imagesList.length; i++) {
-    const currentImage = imagesList[i];
+for (let i = 0; i < images.length; i++) {
+    const currentImage = images[i].image;
+    const currentTitle = images[i].title;
+    const currentText = images[i].text;
     let imgVisibile = "";
     let bordoImg = "";
 
@@ -22,11 +47,15 @@ for (let i = 0; i < imagesList.length; i++) {
     }
 
     colBig.innerHTML += `<div class="img-container ${imgVisibile}">
-    <img src="./img/${currentImage}" alt="spiderman" class="big-images">
-</div>`;
+    <img src="./${currentImage}" alt="spiderman" class="big-images">
+    <div class="content-custom">
+    <div class="title-custom"> ${currentTitle}</div>
+    <div class="text-custom"> ${currentText}</div>
+    </div>
+    </div>`;
 
-    colSmall.innerHTML += `<img src="./img/${currentImage}" alt="ratchet-piccolo" class="small-images ${bordoImg}">`;
-   
+    colSmall.innerHTML += `<img src="./${currentImage}" alt="ratchet-piccolo" class="small-images ${bordoImg}">`;
+
 
 }
 
@@ -34,7 +63,7 @@ for (let i = 0; i < imagesList.length; i++) {
 let indexImage = 0;
 
 // CLICK DOWN
-iconaDownEl.addEventListener("click", function() {
+iconaDownEl.addEventListener("click", function () {
 
     const imagesListAll = document.querySelectorAll(".img-container");
     const imagesSmallListAll = document.querySelectorAll(".small-images");
@@ -44,18 +73,18 @@ iconaDownEl.addEventListener("click", function() {
 
     indexImage++;
 
-    if (indexImage > imagesListAll.length -1) {
+    if (indexImage > imagesListAll.length - 1) {
         indexImage = 0;
     }
 
     imagesListAll[indexImage].classList.add("visible");
     imagesSmallListAll[indexImage].classList.add("bordo-selezione");
-    
+
 
 })
 
 // CLICK UP
-iconaUpEl.addEventListener("click", function() {
+iconaUpEl.addEventListener("click", function () {
 
     const imagesListAll = document.querySelectorAll(".img-container");
     const imagesSmallListAll = document.querySelectorAll(".small-images");
@@ -68,7 +97,7 @@ iconaUpEl.addEventListener("click", function() {
     indexImage--;
 
     if (indexImage < 0) {
-        indexImage = imagesListAll.length -1;
+        indexImage = imagesListAll.length - 1;
     }
 
     imagesListAll[indexImage].classList.add("visible");

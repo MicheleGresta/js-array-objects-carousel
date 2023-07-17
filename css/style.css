@@ -40,6 +40,7 @@ img{
 .img-container{
     height: 100%;
     display: none;
+    position: relative;
 }
 
 
@@ -72,4 +73,21 @@ button {
 
 .bordo-selezione{
     border: 5px solid rgb(167, 166, 166);
+}
+
+.content-custom{
+    color: white;
+    text-align: right;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.text-custom{
+font-size: 1.5rem;
+}
+
+.title-custom {
+    font-size: 3rem;
+    font-weight: bold;
 }
