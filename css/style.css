@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* HTML BOX */
+.container {
+    max-width: 1200px;
+    margin: 10rem auto 0;
+}
+
+.row {
+    display: flex;
+    position: relative;
+}
+
+.col-big{
+    flex-basis: 0;
+    flex-grow: 4;
+    height: 520px;
+}
+
+.col-small{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+
+/* IMMAGINI */
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.col-small > *{
+    height: 100px;
+}
+
+.img-container{
+    height: 100%;
+    display: none;
+}
+
+
+/* BOTTONI ICONE */
+.icona-up {
+    position: absolute;
+    top: -70px;
+    right: 95px;
+    font-size: 60px;
+}
+
+.icona-down {
+    position: absolute;
+    bottom: -75px;
+    right: 95px;
+    font-size: 60px;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* CLASSI DA USARE IN JSCRIPT */
+.visible{
+    display: block;
+}
+
+.bordo-selezione{
+    border: 5px solid rgb(167, 166, 166);
+}
